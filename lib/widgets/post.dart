@@ -138,9 +138,12 @@ class _PostState extends State<Post> {
           title: Text("Remove this post?"),
           children: <Widget>[
             SimpleDialogOption(
-              onPressed: () {
+              onPressed: () async {
                 Navigator.pop(context);
-                deletePost();                                                            
+                await deletePost();   
+                
+                // access to profile state and reload grid
+                profileState.getProfilePosts();
               },
               child: Text("Delete",
                 style: TextStyle(color: Colors.red),

@@ -10,13 +10,18 @@ import 'package:fluttershare/widgets/post.dart';
 import 'package:fluttershare/widgets/post_tile.dart';
 import 'package:fluttershare/widgets/progress.dart';
 
+_ProfileState profileState;
+
 class Profile extends StatefulWidget {
   final String profileId;
 
   Profile({this.profileId});
 
   @override
-  _ProfileState createState() => _ProfileState();
+  _ProfileState createState() {
+    profileState = _ProfileState();
+    return profileState;
+  } 
 }
 
 enum PostOrientation { grid, list }
